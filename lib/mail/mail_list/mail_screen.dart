@@ -26,7 +26,7 @@ class _MailScreenState extends State<MailScreen> {
       body: Container(
           child: Column(
             children: [
-
+              Expanded(child: MailList(widget.title),),
             ],
           )
       ),

@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
 import 'login.dart';
-import 'mail_list/mail_screen.dart';
+import 'mail/mail_list/mail_screen.dart';
 
 
 
