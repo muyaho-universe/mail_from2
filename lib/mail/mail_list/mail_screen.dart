@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'mail_list.dart';
+
 class MailScreen extends StatefulWidget {
   MailScreen(this.title, {Key? key}) : super(key: key);
   String title;

@@ -8,8 +8,6 @@ import 'package:get/get_core/src/get_main.dart';
 import 'login.dart';
 import 'mail/mail_list/mail_screen.dart';
 
-
-
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
 
@@ -25,8 +23,7 @@ class HomePage extends StatelessWidget {
             builder: (context, snapshot) {
               if (!snapshot.hasData) {
                 return const Login();
-              }
-              else{
+              } else {
                 return ListView(
                   children: [
                     Padding(
@@ -36,15 +33,20 @@ class HomePage extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              IconButton(onPressed: (){
-                                FirebaseAuth.instance.signOut();
-                              }, icon: Icon(CupertinoIcons.square_arrow_left ,size:20, color: Colors.blueAccent,)),
+                              IconButton(
+                                  onPressed: () {
+                                    FirebaseAuth.instance.signOut();
+                                  },
+                                  icon: Icon(
+                                    CupertinoIcons.square_arrow_left,
+                                    size: 20,
+                                    color: Colors.blueAccent,
+                                  )),
                               Text(
                                 "편집",
                                 style: TextStyle(
                                   color: Colors.blueAccent,
                                   fontSize: 15,
-
                                 ),
                               ),
                             ],
@@ -71,10 +73,10 @@ class HomePage extends StatelessWidget {
                               color: Colors.white,
                               child: Column(
                                 children: [
-                                  _mainButton(CupertinoIcons.tray , "받은 편지함"),
-                                  Divider(indent: 50,color:Colors.grey),
+                                  _mainButton(CupertinoIcons.tray, "받은 편지함"),
+                                  Divider(indent: 50, color: Colors.grey),
                                   _mainButton(CupertinoIcons.star, "VIP"),
-                                  Divider(indent: 50,color:Colors.grey),
+                                  Divider(indent: 50, color: Colors.grey),
                                   _mainButton(CupertinoIcons.flag, "깃발 표시됨"),
                                 ],
                               ),
@@ -106,16 +108,21 @@ class HomePage extends StatelessWidget {
                               child: Column(
                                 children: [
                                   _mainButton(CupertinoIcons.doc, "임시 저장"),
-                                  Divider(indent: 50,color:Colors.grey),
-                                  _mainButton(CupertinoIcons.paperplane, "보낸 편지함"),
-                                  Divider(indent: 50,color:Colors.grey),
+                                  Divider(indent: 50, color: Colors.grey),
+                                  _mainButton(
+                                      CupertinoIcons.paperplane, "보낸 편지함"),
+                                  Divider(indent: 50, color: Colors.grey),
                                   _mainButton(CupertinoIcons.bin_xmark, "정크"),
-                                  Divider(indent: 50,color:Colors.grey),
+                                  Divider(indent: 50, color: Colors.grey),
                                   _mainButton(CupertinoIcons.delete, "휴지통"),
-                                  Divider(indent: 50,color:Colors.grey),
-                                  _mainButton(CupertinoIcons.archivebox, "모든 메일"),
-                                  Divider(indent: 50,color:Colors.grey),
-                                  _mainButton(CupertinoIcons.folder, "별표 편지함",)
+                                  Divider(indent: 50, color: Colors.grey),
+                                  _mainButton(
+                                      CupertinoIcons.archivebox, "모든 메일"),
+                                  Divider(indent: 50, color: Colors.grey),
+                                  _mainButton(
+                                    CupertinoIcons.folder,
+                                    "별표 편지함",
+                                  )
                                 ],
                               ),
                             ),
@@ -130,9 +137,7 @@ class HomePage extends StatelessWidget {
                   ],
                 );
               }
-
-            }
-        ),
+            }),
       ),
     );
   }
@@ -161,12 +166,16 @@ class HomePage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Icon(CupertinoIcons.chevron_right, size:15, color: Colors.grey,),
+              Icon(
+                CupertinoIcons.chevron_right,
+                size: 15,
+                color: Colors.grey,
+              ),
             ],
           ),
         ]),
       ),
-      onTap: (){
+      onTap: () {
         Get.to(MailScreen(title));
       },
     );
